@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>servlet</display-name>
+	<welcome-file-list>
+		<welcome-file>ServletGetDepartmentsList</welcome-file>
+	</welcome-file-list>
+
+
+	<!-- ServletGetEmpleHibernate -->
+	<servlet>
+		<description>ServletGetEmpleHibernate</description>
+		<display-name>ServletGetEmpleHibernate</display-name>
+		<servlet-name>ServletGetEmpleHibernate</servlet-name>
+		<servlet-class>controlador.servlets.ServletGetEmpleHibernate</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletGetEmpleHibernate</servlet-name>
+		<url-pattern>/ServletGetEmpleHibernate</url-pattern>
+	</servlet-mapping>
+
+	<!-- ServletGetDepartments -->
+	<servlet>
+		<description>ServletGetDepartmentsList</description>
+		<display-name>ServletGetDepartmentsList</display-name>
+		<servlet-name>ServletGetDepartmentsList</servlet-name>
+		<servlet-class>controlador.servlets.ServletGetDepartmentsList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletGetDepartmentsList</servlet-name>
+		<url-pattern>/ServletGetDepartmentsList</url-pattern>
+	</servlet-mapping>
+
+	<!-- ServletGetEmployeesDepartAjax -->
+
+	<servlet>
+		<description>ServletGetEmployeesDepartAjax</description>
+		<display-name>ServletGetEmployeesDepartAjax</display-name>
+		<servlet-name>ServletGetEmployeesDepartAjax</servlet-name>
+		<servlet-class>controlador.servlets.ServletGetEmployeesDepartAjax</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletGetEmployeesDepartAjax</servlet-name>
+		<url-pattern>/getemplyoeesajax</url-pattern>
+	</servlet-mapping>
+
+	<!-- ServletJSon -->
+	<servlet>
+		<description>ServletObtenerDetallesEmpleadoJson</description>
+		<display-name>ServletObtenerDetallesEmpleadoJson</display-name>
+		<servlet-name>ServletObtenerDetallesEmpleadoJson</servlet-name>
+		<servlet-class>controlador.servlets.ServletObtenerDetallesEmpleadoJson</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletObtenerDetallesEmpleadoJson</servlet-name>
+		<url-pattern>/getinfojson</url-pattern>
+	</servlet-mapping>
+
+
+<!-- 	SERVLET UPLOAD -->
+	<servlet>
+		<servlet-name>upload</servlet-name>
+		<servlet-class>controlador.servlets.upload.UploadFileExample</servlet-class>
+		<init-param>
+			<param-name>RUTA_SUBIDA_FICHEROS</param-name>
+			<param-value>C:\logs</param-value>
+		</init-param>
+		<multipart-config>
+			<max-file-size>31457283333</max-file-size>
+			<max-request-size>524288</max-request-size>
+		</multipart-config>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>upload</servlet-name>
+		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- ServletGetEmployeesDepart -->
+
+	<servlet>
+		<description>ServletGetEmployeesDepart</description>
+		<display-name>ServletGetEmployeesDepart</display-name>
+		<servlet-name>ServletGetEmployeesDepart</servlet-name>
+		<servlet-class>controlador.servlets.ServletGetEmployeesDepart</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletGetEmployeesDepart</servlet-name>
+		<url-pattern>/ServletGetEmployeesDepart</url-pattern>
+	</servlet-mapping>
+
+	<!-- Listeners -->
+
+	<listener>
+		<listener-class>controlador.listeners.ContextListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>controlador.listeners.RequestListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>controlador.listeners.SessionListener</listener-class>
+	</listener>
+
+
+
+</web-app>
